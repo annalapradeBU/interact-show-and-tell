@@ -16,7 +16,7 @@ function App() {
   const [activeStickers, setActiveStickers] = useState([]);
 
   // actually adding the new sticker after presseing associated button
-  const addSticker = (emoji:any) => {
+  const addSticker = (emoji) => {
     const newSticker = {
       id: Date.now(), // id is it's specfic date 
       emoji: emoji,
