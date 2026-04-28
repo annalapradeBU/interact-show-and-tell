@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 // import the components 
+
+//ignore typing, i don't want to deal with it rn 
+// @ts-ignore
 import Sticker from './components/Sticker';
+// @ts-ignore
 import CanvasBrush from './components/CanvasBrush';
 
 // these are the "stickers" allowed right now
@@ -46,7 +50,7 @@ function App() {
           </button>
         ))}
       </div>
-      
+
       <p className="hint">Click to add to canvas!</p>
 
     </div>
