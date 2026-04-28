@@ -1,0 +1,136 @@
+/* basic canvas elements */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; 
+}
+
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: absolute;
+  top: 6%;
+  left: 0;
+  bottom: 0;
+  width: 140px;
+  background: #2d3436;
+  color: white;
+  padding: 1%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.app-header, .sidebar {
+  z-index: 100; /* high enough to stay above the canvas */
+}
+
+
+/* sticker utility */
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 2%;
+}
+
+.spawn-btn {
+  background: #636e72;
+  border: none;
+  font-size: calc(18px + 2vw);
+  padding: 10%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s; /* on hover, become slighter and slighly bigger to show that we're hovering */
+}
+
+.spawn-btn:hover {
+  background: #b2bec3;
+  transform: scale(1.1);
+}
+
+.hint {
+  font-size: calc(2px + 2vw);
+  margin-top: auto;
+  text-align: center;
+  opacity: 0.6;
+}
+
+/* sticker themselves */
+
+.sticker {
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px; /* starting size */
+  touch-action: none;
+  border: 1px dashed transparent;
+  
+  /* make emoji scale with the box */
+  overflow: visible; 
+  line-height: 1;
+}
+
+.sticker span, .sticker {
+  font-size: clamp(20px, 100%, 500px); 
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+/* sticker controls :] */
+
+.resize-handle {
+  background: white;
+  z-index: 210;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #2563eb;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  cursor: nwse-resize;
+  border: 2px solid white;
+}
+
+/* Positioning handles in the corners */
+.top-left { top: -6px; left: -6px; cursor: nw-resize; }
+.top-right { top: -6px; right: -6px; cursor: alias; background: #ff4757; } /* red for rotation, make it distinct */
+.bottom-left { bottom: -6px; left: -6px; cursor: sw-resize; }
+.bottom-right { bottom: -6px; right: -6px; cursor: se-resize; }
+
+
+
+
+/* clear button */
+.clear-btn {
+  background: #ff4757;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 110; /* extra insurance so the drawings don't mess with the button */
+}
+
