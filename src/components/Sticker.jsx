@@ -11,6 +11,8 @@ export default function Sticker({ emoji, startX, startY }) {
     // attach library to sticker element 
     interactRef.current = interact(el)
       .draggable({
+        // re-enabling the inertia because it's fun and cute 
+        inertia: true,
 
         // restrictRect keeps stickers from flying of the canvas/screen
         modifiers: [interact.modifiers.restrictRect({ restriction: 'parent' })],
