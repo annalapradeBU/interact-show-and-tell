@@ -56,7 +56,7 @@ canvas {
   background: #636e72;
   border: none;
   font-size: calc(18px + 2vw);
-  padding: 10%;
+  padding: 15%;
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s; /* on hover, become slighter and slighly bigger to show that we're hovering */
